@@ -65,7 +65,7 @@ int main(int argc, char **argv){
   TString fsrc=argv[1];
   TString ftgt=argv[2];
   TString fout;
-  argc>3 ? fout = argv[3] : fout="out.png";
+  argc>3 ? fout = argv[3] : fout="uva.png";
   // cout << "Reading images: source= " << fsrc << " target= " << ftgt << endl;
   // cout << "Output= " << fout << endl;
 

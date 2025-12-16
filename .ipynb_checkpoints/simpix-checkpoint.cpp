@@ -65,7 +65,7 @@ int main(int argc, char **argv){
   TString fsrc=argv[1];
   TString ftgt=argv[2];
   TString fout;
-  argc>3 ? fout = argv[3] : fout="manypixel.png";
+  argc>3 ? fout = argv[3] : fout="collage.png";
   // cout << "Reading images: source= " << fsrc << " target= " << ftgt << endl;
   // cout << "Output= " << fout << endl;
 
@@ -92,8 +92,8 @@ int main(int argc, char **argv){
   UInt_t *imout2 = out2->GetArgbArray(); 
 
 
-  int Tmax = 50000;
-  int nT = 60000;
+  int Tmax = 30000;
+  int nT = 40000;
 
   double T;
 
@@ -130,7 +130,7 @@ int main(int argc, char **argv){
   out1->Draw("X");
   c1->cd(4);
   out2->Draw("X");
-  c1->Print("manypixel.png");
+  c1->Print(fout);
   
   // save the new image
   //out->WriteImage(fout.Data());

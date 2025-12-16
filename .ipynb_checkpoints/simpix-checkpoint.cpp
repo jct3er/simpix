@@ -65,7 +65,7 @@ int main(int argc, char **argv){
   TString fsrc=argv[1];
   TString ftgt=argv[2];
   TString fout;
-  argc>3 ? fout = argv[3] : fout="Monet.png";
+  argc>3 ? fout = argv[3] : fout="manypixel.png";
   // cout << "Reading images: source= " << fsrc << " target= " << ftgt << endl;
   // cout << "Output= " << fout << endl;
 
@@ -92,8 +92,8 @@ int main(int argc, char **argv){
   UInt_t *imout2 = out2->GetArgbArray(); 
 
 
-  int Tmax = 30000;
-  int nT = 20000;
+  int Tmax = 50000;
+  int nT = 60000;
 
   double T;
 
@@ -101,7 +101,7 @@ int main(int argc, char **argv){
   for (int itemp=nT; itemp>0; itemp--) {
     T = (Tmax*itemp)/nT;
 
-    if (fmod(T, 10.0)==0) cout << "Temperature: " << T << endl;
+    if (fmod(T, 100)==0) cout << "Temperature: " << T << endl;
 
 
 
@@ -130,7 +130,7 @@ int main(int argc, char **argv){
   out1->Draw("X");
   c1->cd(4);
   out2->Draw("X");
-  c1->Print("Monet.png");
+  c1->Print("manypixel.png");
   
   // save the new image
   //out->WriteImage(fout.Data());

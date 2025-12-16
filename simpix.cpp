@@ -28,7 +28,7 @@ double difference(UInt_t pixelA, UInt_t pixelB){
     double dg = Ag-Bg;
     double db = Ab-Bb;
 
-    return dr*dr+dg*dg+db*db;
+    return sqrt(dr*dr+dg*dg+db*db);
 };
 
 double E(UInt_t *src, UInt_t *tgt, int num){
@@ -92,16 +92,16 @@ int main(int argc, char **argv){
   UInt_t *imout2 = out2->GetArgbArray(); 
 
 
-  int Tmax = 30000;
-  int nT = 40000;
+  int Tmax = 60000;
+  double nT = 45000;
 
   double T;
 
 
   for (int itemp=nT; itemp>0; itemp--) {
-    T = (Tmax*itemp)/nT;
+    T = itemp*(Tmax/nT);
 
-    if (fmod(T, 100)==0) cout << "Temperature: " << T << endl;
+    if (fmod(T, 100)==0) cout << "Temperature: " << (unsigned int)T << endl;
 
 
 
